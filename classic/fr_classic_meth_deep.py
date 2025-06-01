@@ -159,11 +159,6 @@ def calculate_ssim(test_image, reference_image):
     reference_gray = cv2.cvtColor(np.array(reference_image), cv2.COLOR_RGB2GRAY)
     return ssim(reference_gray, test_gray, data_range=255)
 
-# Keeping this as a comment for reference
-def calculate_mse(test_image, reference_image):
-    test_gray = cv2.cvtColor(np.array(test_image), cv2.COLOR_RGB2GRAY)
-    reference_gray = cv2.cvtColor(np.array(reference_image), cv2.COLOR_RGB2GRAY)
-    return np.mean((reference_gray - test_gray) ** 2)
 
 #############################################
 # MAIN EVALUATION FUNCTION
@@ -206,8 +201,7 @@ def evaluate_full_reference_metrics(test_dir, reference_dir, output_csv):
                 # Compute metrics
                 psnr_value = calculate_psnr(test_image, reference_image)
                 ssim_value = calculate_ssim(test_image, reference_image)
-                # MSE calculation removed from active code
-                # mse_value = calculate_mse(test_image, reference_image)
+
 
                 # End timer
                 eval_time = time.time() - start_time
