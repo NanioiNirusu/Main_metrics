@@ -87,7 +87,6 @@ def process_directory(directory_path, output_csv):
 # MAIN SCRIPT EXECUTION
 #############################################
 
-# Example usage
 directory_path = "J:/Masters/Datasets/PIPAL/Train_Label/Train_Label/"
 output_csv = 'PILAL_bmp_data.csv'
 process_directory(directory_path, output_csv)
